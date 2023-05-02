@@ -1,0 +1,5 @@
+p {
+    display: flex;
+    font-size: 5rem;
+    justify-content: center;
+}

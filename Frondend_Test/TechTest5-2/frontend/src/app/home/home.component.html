@@ -1,0 +1,42 @@
+<app-search></app-search>
+<div class="sort">
+    <select #sort (change)="onSelected(sort.value)">
+        <option default value="sortBy">Sort By</option>
+        <option value="price">Price</option>
+        <option value="title">Revelance</option>
+    </select>
+    <button type="button" (click) = "onSortDirection()">
+        <fa-icon [icon]="faSort" *ngIf="SortDirection===''"></fa-icon>
+        <fa-icon [icon]="faSortUp" *ngIf="SortDirection==='desc'"></fa-icon>
+        <fa-icon [icon]="faSortDown" *ngIf="SortDirection==='asc'"></fa-icon>
+    </button>
+</div>
+
+<app-categories></app-categories>
+<app-not-found [visible]="!products || products.length <= 0"></app-not-found>
+<ul> 
+    <li *ngFor="let product of products | sort:([SortbyParam,SortDirection]) | paginate: { itemsPerPage: itemsPerPage, currentPage:p }">
+        <a routerLink="/product/{{product.id}}">
+            <img src="{{product.thumbnail}}" alt="">
+            <div class="content">
+                <div class="name">
+                    {{product.title}}
+                </div>
+                <div class="price">
+                    <span>
+                        {{product.price|currency}}
+                    </span>
+                </div>
+                <div class="stars">
+                    <span>★: {{product.rating}}/5</span>
+                </div>
+                <div class ="product-item-footer">
+                    <div class="category">{{product.category}}</div>
+                </div>
+            </div>
+        </a>
+    </li>
+</ul>
+<div class="pagination" *ngIf="products.length != 0">
+    <pagination-controls class="my-pagination" (pageChange)="p = $event; topFunction();"></pagination-controls>
+</div>

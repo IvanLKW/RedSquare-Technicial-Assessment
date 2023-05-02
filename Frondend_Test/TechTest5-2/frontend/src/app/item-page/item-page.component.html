@@ -1,0 +1,38 @@
+<app-not-found [visible]="!product" notFoundMessage="Product Not Found!" resetLinkText="Back to Homepage"></app-not-found>
+
+<div *ngIf="product" class="container">
+    <img [src]="product.images[0]" [alt]="product.title">
+
+    <div class="details">
+        <div class="header">
+            <span class="name">
+                {{product.title}}
+            </span>
+        </div>
+        <div class="description">
+            <span>
+            Description: {{product.description}}  
+            </span>
+        </div>
+        <div class="stars">
+            <span>★: {{product.rating}}/5</span>
+        </div>
+        
+        <div class="stock">
+            <span>
+                Stock: <strong>{{product.stock}}</strong>
+            </span>
+        </div>
+        <div class="category">
+            <a>
+                {{product.category}}
+            </a>
+        </div>
+        <div class="price">
+            <span>
+                {{product.price|currency}}
+            </span>
+        </div>
+        <button (click)="addToCart()">Add to Cart</button>
+    </div>
+</div>

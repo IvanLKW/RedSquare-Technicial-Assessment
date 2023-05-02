@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+
+ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+}
+
+li a {
+    height: 20rem;
+    width: 20rem;
+    border: 1px solid #4AABCA;
+    border-radius: 1rem;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color:rgb(0, 0, 0);
+}
+
+img {
+    float: left;
+    width:  20rem;
+    height: 12rem;
+    object-fit: cover;
+}
+
+li a:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.content{
+    padding: 0.5rem 1rem;
+    position: relative;
+}
+
+.stars {
+    margin-bottom: 0.2rem;
+}
+
+.price {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    font-size: 1.2rem;
+}
+
+.name {
+    white-space: normal;
+    width: 12rem;
+    font-size: 0.9rem;
+}
+
+.category {
+    border-radius: 1rem;
+    background-color: whitesmoke;
+    display: inline-block;
+    font-size: 0.7rem;
+    color: grey;
+    margin-right: 0.3rem;
+    padding: 5px;
+}
+
+.sort {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-bottom: 1rem;
+    margin-top: -0.4rem;
+}
+
+.sort select {
+    border-radius: 10rem 0 0 10rem;
+    border: none;
+    height: 2.4rem;
+    width: 10rem;
+    background-color:#f1f1f1;
+    color: grey;
+    padding-left: 1rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    outline: none;
+}
+
+.sort button {
+    color: grey;
+    height: 2.4rem;
+    width: 5rem;
+    font-size: 1rem;
+    border-radius: 0 10rem 10rem 0;
+    font-family: "Poppins", sans-serif;
+    border: none;
+    background-color: #4AABCA;
+    color: white;
+    opacity: 0.8;
+    outline: none;
+}
+
+.sort button:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.sort option {
+    background-color: #f1f1f1;
+    padding: 1.2rem;
+    font-size: 0.8rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    outline: none;
+}
+
+.my-pagination ::ng-deep .ngx-pagination .current {
+    background: #4AABCA;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
