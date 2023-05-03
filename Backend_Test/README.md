@@ -34,7 +34,28 @@ There are two endpoints on this API whereby:
 
 There is also a seperate Python code file **loadTest.py** to make a request every second from endpoint 2.
 
-#### Sample result
+To run the code, enter the following line into the terminal:
+```
+uvicorn TechTest4-2:app --reload
 ```
 
+To run the load test code, enter the following line into a seperate terminal:
+```
+py loadTest.py
+```
+
+#### Sample result
+```
+Example of SHA-256 hash: 
+8cd83ba08732b9c9d9aff80c1a4be5b73522eb4fd930c8ff0c1cef03f7a87de0
+The last 1 character are `0`. This is an even number. Does not Pass.
+INFO:     127.0.0.1:50217 - "GET /endpoint2 HTTP/1.1" 200 OK
+Example of SHA-256 hash: 
+1c594cd5e37d1adf31494b4cb5ce6062814f6eb24fd159b67e65c1f7b318bf7f
+The last 1 character are `f`. This is an alphabet. Does not Pass.
+INFO:     127.0.0.1:50217 - "GET /endpoint2 HTTP/1.1" 200 OK
+Example of SHA-256 hash: 
+5ec0d4ea1d02598183483a03f679efecc0b31c8f1abd08f2d8b4dc1b233d79f9
+The last 1 character are `9`. This is a number and odd number. Pass!
+INFO:     127.0.0.1:50220 - "GET /endpoint2 HTTP/1.1" 200 OK
 ```
