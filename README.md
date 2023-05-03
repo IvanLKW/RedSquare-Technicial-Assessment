@@ -1,4 +1,4 @@
-# All About Me (Interview Project by SynapseBN)
+# RedSquare Technicial Assessment
 ##### By Ivan Liew
 
 This is a technicial assessment of both Frontend and Backend by RedSquare Technologies Sdn Bhd.
